@@ -1,0 +1,13 @@
+<script>
+    function calculateScore() {
+        let score = 0;
+        const answers = ['b', 'a', 'c', 'c', 'b']; // Respostas corretas
+        for (let i = 1; i <= answers.length; i++) {
+            const q = document.querySelector(`input[name="q${i}"]:checked`);
+            if (q && q.value === answers[i - 1]) {
+                score += 20; // Cada questão certa vale 20 pontos
+            }
+        }
+        document.getElementById('result').innerText = `Você fez ${score} pontos!`;
+    }
+</script>
