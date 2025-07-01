@@ -1,85 +1,69 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quiz sobre Sensores de Distância</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <div class="container">
-      <h1>Quiz sobre Sensores de Distância</h1>
-      <p>Os sensores de distância são dispositivos que medem a distância entre o sensor e um objeto. Eles funcionam utilizando diferentes princípios, como ultrassom, luz infravermelha ou laser. O sensor emite um sinal que reflete no objeto e retorna ao sensor, permitindo calcular a distância com base no tempo que o sinal leva para voltar. Esses sensores são amplamente utilizados em robótica, automação e em sistemas de segurança.</p>
-      
-      <div class="images">
-          <img src="sensor.jpg" alt="Imagem de referência 1">
-          <img src="sensdist.jpg" alt="Imagem de referência 2">
-      </div>
+<link rel="stylesheet" href="styles.css">
 
-      <form id="quiz">
-          <h2>Questões</h2>
-          <div class="question">
-              <p>1. Qual princípio é utilizado por sensores de ultrassom?</p>
-              <div class="alternatives">
-                  <label><input type="radio" name="q1" value="a"> a) Luz infravermelha</label>
-                  <label><input type="radio" name="q1" value="b"> b) Ondas sonoras</label>
-                  <label><input type="radio" name="q1" value="c"> c) Laser</label>
-                  <label><input type="radio" name="q1" value="d"> d) Campo magnético</label>
-              </div>
-          </div>
-          <div class="question">
-              <p>2. Qual é a unidade de medida de distância mais comum?</p>
-              <div class="alternatives">
-                  <label><input type="radio" name="q2" value="a"> a) Metros</label>
-                  <label><input type="radio" name="q2" value="b"> b) Litros</label>
-                  <label><input type="radio" name="q2" value="c"> c) Gramas</label>
-                  <label><input type="radio" name="q2" value="d"> d) Segundos</label>
-              </div>
-          </div>
-          <div class="question">
-              <p>3. O que um sensor de distância a laser utiliza para medir?</p>
-              <div class="alternatives">
-                  <label><input type="radio" name="q3" value="a"> a) Luz visível</label>
-                  <label><input type="radio" name="q3" value="b"> b) Ondas sonoras</label>
-                  <label><input type="radio" name="q3" value="c"> c) Luz infravermelha</label>
-                  <label><input type="radio" name="q3" value="d"> d) Radiação térmica</label>
-              </div>
-          </div>
-          <div class="question">
-              <p>4. Qual é a aplicação comum de sensores de distância?</p>
-              <div class="alternatives">
-                  <label><input type="radio" name="q4" value="a"> a) Medição de temperatura</label>
-                  <label><input type="radio" name="q4" value="b"> b) Detecção de movimento</label>
-                  <label><input type="radio" name="q4" value="c"> c) Navegação de robôs</label>
-                  <label><input type="radio" name="q4" value="d"> d) Controle de umidade</label>
-              </div>
-          </div>
-          <div class="question">
-              <p>5. Qual sensor é mais preciso para distâncias curtas?</p>
-              <div class="alternatives">
-                  <label><input type="radio" name="q5" value="a"> a) Sensor ultrassônico</label>
-                  <label><input type="radio" name="q5" value="b"> b) Sensor a laser</label>
-                  <label><input type="radio" name="q5" value="c"> c) Sensor infravermelho</label>
-                  <label><input type="radio" name="q5" value="d"> d) Sensor de pressão</label>
-              </div>
-          </div>
-          <button type="button" onclick="calculateScore()">Enviar</button>
-      </form>
-      <div id="result"></div>
-  </div>
+<div class="container">
+    <h1>Quiz sobre Sensores de Distância</h1>
+    <p>Os sensores de distância são dispositivos que medem a distância entre o sensor e um objeto...</p>
+    
+    <div class="images">
+        <img src="sensor.jpg" alt="Imagem de referência 1">
+        <img src="sensdist.jpg" alt="Imagem de referência 2">
+    </div>
 
-  <script>
-      function calculateScore() {
-          let score = 0;
-          const answers = ['b', 'a', 'c', 'c', 'b']; // Respostas corretas
-          for (let i = 1; i <= answers.length; i++) {
-              const q = document.querySelector(`input[name="q${i}"]:checked`);
-              if (q && q.value === answers[i - 1]) {
-                  score += 20; // Cada questão certa vale 20 pontos
-              }
-          }
-          document.getElementById('result').innerText = `Você fez ${score} pontos!`;
-      }
-  </script>
-</body>
-</html>
+    <form id="quiz">
+        <h2>Questões</h2>
+        <div class="question">
+            <p>1. Qual princípio é utilizado por sensores de ultrassom?</p>
+            <div class="alternatives">
+                <label><input type="radio" name="q1" value="a"> a) Luz infravermelha</label>
+                <label><input type="radio" name="q1" value="b"> b) Ondas sonoras</label>
+                <label><input type="radio" name="q1" value="c"> c) Laser</label>
+                <label><input type="radio" name="q1" value="d"> d) Campo magnético</label>
+            </div>
+        </div>
+        
+        <div class="question">
+            <p>2. Qual é a unidade de medida de distância mais comum?</p>
+            <div class="alternatives">
+                <label><input type="radio" name="q2" value="a"> a) Metros</label>
+                <label><input type="radio" name="q2" value="b"> b) Litros</label>
+                <label><input type="radio" name="q2" value="c"> c) Gramas</label>
+                <label><input type="radio" name="q2" value="d"> d) Segundos</label>
+            </div>
+        </div>
+        
+        <div class="question">
+            <p>3. O que um sensor de distância a laser utiliza para medir?</p>
+            <div class="alternatives">
+                <label><input type="radio" name="q3" value="a"> a) Luz visível</label>
+                <label><input type="radio" name="q3" value="b"> b) Ondas sonoras</label>
+                <label><input type="radio" name="q3" value="c"> c) Luz infravermelha</label>
+                <label><input type="radio" name="q3" value="d"> d) Radiação térmica</label>
+            </div>
+        </div>
+        
+        <div class="question">
+            <p>4. Qual é a aplicação comum de sensores de distância?</p>
+            <div class="alternatives">
+                <label><input type="radio" name="q4" value="a"> a) Medição de temperatura</label>
+                <label><input type="radio" name="q4" value="b"> b) Detecção de movimento</label>
+                <label><input type="radio" name="q4" value="c"> c) Navegação de robôs</label>
+                <label><input type="radio" name="q4" value="d"> d) Controle de umidade</label>
+            </div>
+        </div>
+        
+        <div class="question">
+            <p>5. Qual sensor é mais preciso para distâncias curtas?</p>
+            <div class="alternatives">
+                <label><input type="radio" name="q5" value="a"> a) Sensor ultrassônico</label>
+                <label><input type="radio" name="q5" value="b"> b) Sensor a laser</label>
+                <label><input type="radio" name="q5" value="c"> c) Sensor infravermelho</label>
+                <label><input type="radio" name="q5" value="d"> d) Sensor de pressão</label>
+            </div>
+        </div>
+        
+        <button type="button" onclick="calculateScore()">Enviar</button>
+    </form>
+    
+    <div id="result"></div>
+    <div id="confetti-container"></div> <!-- Container para confete -->
+</div>
