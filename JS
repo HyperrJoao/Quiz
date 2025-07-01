@@ -1,13 +1,44 @@
-<script>
-    function calculateScore() {
-        let score = 0;
-        const answers = ['b', 'a', 'c', 'c', 'b']; // Respostas corretas
-        for (let i = 1; i <= answers.length; i++) {
-            const q = document.querySelector(`input[name="q${i}"]:checked`);
-            if (q && q.value === answers[i - 1]) {
+function calculateScore() {
+    let score = 0;
+    const answers = ['b', 'a', 'c', 'c', 'b']; // Respostas corretas
+    const questions = document.querySelectorAll('.question');
+    
+    questions.forEach((question, index) => {
+        const selected = question.querySelector(`input[name="q${index + 1}"]:checked`);
+        const correctAnswer = answers[index];
+        
+        if (selected) {
+            if (selected.value === correctAnswer) {
                 score += 20; // Cada questão certa vale 20 pontos
+                selected.parentElement.style.color = 'green'; // Resposta correta
+            } else {
+                selected.parentElement.style.color = 'red'; // Resposta errada
             }
         }
-        document.getElementById('result').innerText = `Você fez ${score} pontos!`;
+        
+        // Desabilitar os inputs após o envio
+        const inputs = question.querySelectorAll('input');
+        inputs.forEach(input => input.disabled = true);
+    });
+    
+    document.getElementById('result').innerText = `Você fez ${score} pontos!`;
+    
+    // Comemoração (confete) se acertar 4 ou 5 questões
+    if (score >= 80) {
+        startConfetti();
     }
-</script>
+}
+
+// Função para gerar confetes
+function startConfetti() {
+    const confettiContainer = document.getElementById('confetti-container');
+    confettiContainer.innerHTML = ''; // Limpa os confetes antigos
+
+    for (let i = 0; i < 100; i++) {
+        const confettiPiece = document.createElement('div');
+        confettiPiece.classList.add('confetti');
+        confettiPiece.style.left = `${Math.random() * 100}%`;
+        confettiPiece.style.animationDelay = `${Math.random() * 2}s`;
+        confettiContainer.appendChild(confettiPiece);
+    }
+}
