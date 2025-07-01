@@ -57,3 +57,42 @@ button {
 button:hover {
   background-color: #ddd;
 }
+
+#result {
+  text-align: center;
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+/* Animação de confetes */
+#confetti-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 100;
+  overflow: hidden;
+}
+
+.confetti {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #ff0;
+  border-radius: 50%;
+  opacity: 0.7;
+  animation: confettiFall 3s linear infinite;
+}
+
+@keyframes confettiFall {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
