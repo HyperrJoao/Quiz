@@ -1,3 +1,7 @@
+.App {
+  min-height: 100vh;
+}
+
 .App-logo {
     height: 40vmin;
     pointer-events: none;
@@ -31,4 +35,29 @@
     to {
         transform: rotate(360deg);
     }
+}
+
+/* Smooth transitions para todos os elementos interativos */
+button {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Hover effects para cards */
+.card:hover {
+  transform: translateY(-2px);
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Loading animation */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
