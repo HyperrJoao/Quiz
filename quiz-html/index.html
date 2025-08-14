@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz: Sensores de Distância (Ultrassom)</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header do Quiz -->
+        <div class="quiz-header">
+            <h1 class="title">Quiz: Sensores de Distância (Ultrassom)</h1>
+            <p class="description">Teste seus conhecimentos sobre sensores ultrassônicos e medição de distância</p>
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <p class="progress-text" id="progressText">Questão 1 de 10</p>
+            </div>
+        </div>
+
+        <!-- Área da Questão -->
+        <div class="question-card" id="questionCard">
+            <div class="question-header">
+                <h2 class="question-title" id="questionTitle">Questão 1</h2>
+                <span class="question-type">Verdadeiro ou Falso</span>
+            </div>
+            
+            <div class="question-content">
+                <div class="question-image">
+                    <img id="questionImage" src="" alt="Sensor ultrassônico" />
+                </div>
+                
+                <div class="question-text">
+                    <p id="questionText"></p>
+                </div>
+                
+                <div class="answer-buttons">
+                    <button class="btn btn-true" id="trueBtn" onclick="handleAnswer(true)">
+                        <i class="fas fa-check-circle"></i>
+                        Verdadeiro
+                    </button>
+                    <button class="btn btn-false" id="falseBtn" onclick="handleAnswer(false)">
+                        <i class="fas fa-times-circle"></i>
+                        Falso
+                    </button>
+                </div>
+                
+                <div class="user-answer" id="userAnswer" style="display: none;">
+                    <p id="userAnswerText"></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Score Atual -->
+        <div class="score-card">
+            <p id="currentScore">Pontuação atual: 0/0</p>
+        </div>
+
+        <!-- Resultados Finais -->
+        <div class="results-container" id="resultsContainer" style="display: none;">
+            <div class="results-header">
+                <h1>Quiz Finalizado!</h1>
+                <div class="final-score" id="finalScore">0/10</div>
+                <p class="score-percentage" id="scorePercentage">Você acertou 0 de 10 questões (0%)</p>
+                <button class="btn btn-restart" onclick="resetQuiz()">
+                    <i class="fas fa-redo"></i>
+                    Refazer Quiz
+                </button>
+            </div>
+
+            <div class="results-grid" id="resultsGrid">
+                <!-- Resultados serão inseridos aqui pelo JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
